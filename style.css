@@ -298,3 +298,66 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Estilos para o menu de navegação em dispositivos móveis */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: row; /* Mantém logo e hambúrguer na mesma linha */
+        justify-content: space-between;
+    }
+
+    .nav-menu {
+        display: none; /* Esconde o menu por padrão */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Abaixo do cabeçalho */
+        left: 0;
+        background-color: var(--primary-color);
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        text-align: center;
+    }
+    
+    .nav-menu.active {
+        display: flex; /* Mostra o menu quando a classe 'active' está presente */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-menu a {
+        padding: 1rem 0;
+        display: block;
+    }
+
+    .hamburger {
+        display: block; /* Mostra o botão de hambúrguer */
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .video-item {
+        max-width: 100%;
+    }
+    
+    .packages-grid, .material-grid {
+        grid-template-columns: 1fr;
+    }
+}

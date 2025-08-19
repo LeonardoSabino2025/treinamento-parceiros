@@ -16,11 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Form submission animation (optional)
-    const form = document.getElementById('partnership-form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Candidatura enviada! Entraremos em contato em breve.');
-        form.reset();
+    // Toggle mobile menu
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
     });
 });
